@@ -1,0 +1,5 @@
+.item__row {
+  max-width: 260px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="root">
+  <div class="page">
+    <header class="header">
+      <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+    </header>
+    <main>
+      <section class="profile">
+          <div class=profile__info>
+            <img class="profile__avatar" src="./images/Avatar.png" alt="Автар">
+            <div class="profile__row">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button"><img src="./images/pen.png"></button>
+            </div>
+             <p class="profile__description">Исследователь океана</p>
+            </div>
+            <button class="profile__add-button"><img src="./images/plus.png"></button>
+      </section>
+
+      <section class="elements">
+
+        <div class="item"><img class="item__image" src="./images/busan.jpg" alt="Пуссан">
+          <div class="item__row">
+          <p class="item__text">Пуссан</p>
+          <img class="item__like" src="./images/like.svg">
+          </div>
+        </div>
+
+        <div class="item"><img class="item__image" src="./images/paris.jpg" alt="Париж">
+          <div class="item__row">
+          <p class="item__text">Париж</p>
+          <img class="item__like" src="./images/like.svg">
+          </div>
+        </div>
+
+        <div class="item"><img class="item__image" src="./images/siena.jpg" alt="Сиена">
+          <div class="item__row">
+          <p class="item__text">Сиена</p>
+          <img class="item__like" src="./images/like.svg">
+          </div>
+        </div>
+
+        <div class="item"><img class="item__image" src="./images/sighișoara.jpg" alt="Сигишоара">
+          <div class="item__row">
+          <p class="item__text">Сигишоара</p>
+          <img class="item__like" src="./images/like.svg">
+          </div>
+        </div>
+
+        <div class="item"><img class="item__image" src="./images/hamburg.jpg" alt="Гамбург">
+          <div class="item__row">
+          <p class="item__text">Гамбург</p>
+          <img class="item__like" src="./images/like.svg">
+          </div>
+        </div>
+
+        <div class="item"><img class="item__image" src="./images/sydney.jpg" alt="Сидней">
+          <div class="item__row">
+          <p class="item__text">Сидней</p>
+          <img class="item__like" src="./images/like.svg">
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p class="footer__text">&#169; 2020 Mesto Russia</p>
+    </footer>
+
+
+ <div class="popup">
+
+  <div class="popup__container">
+    <button class="popup__button-close"><img src="./images/close.svg"></button>
+    <h2 class="popup__heading">Редактировать профиль</h2>
+    <input type="text" placeholder="Жак-Ив Кусто" class="popup__input-name">
+    <input type="text" placeholder="Исследователь океана" class="popup__input-description">
+    <button class="popup__button">Сохранить</button>
+  </div>
+
+</div>
+
+
+
+
+<script src="./scripts/main.js"></script>
+
+ </div>
+
+</body>
+</html>
