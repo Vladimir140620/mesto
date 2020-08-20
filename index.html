@@ -13,88 +13,68 @@
     </header>
     <main>
       <section class="profile">
-          <div class=profile__info>
-            <img class="profile__avatar" src="./images/Avatar.png" alt="Автар">
-            <div class="profile__row">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button"><img src="./images/pen.png"></button>
-            </div>
-             <p class="profile__description">Исследователь океана</p>
-            </div>
-            <button class="profile__add-button"><img src="./images/plus.png"></button>
+        <div class="profile__info">
+          <img class="profile__avatar" src="./images/avatar.png" alt="Автар">
+          <div class="profile__row">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button class="profile__edit-button" type="button"><img src="./images/pen.svg" alt="Кнопка"></button>
+          </div>
+          <p class="profile__description">Исследователь океана</p>
+          </div>
+          <button class="profile__add-button" type="button"><img src="./images/plus.svg" alt="Кнопка"></button>
       </section>
-
       <section class="elements">
-
-        <div class="item"><img class="item__image" src="./images/busan.jpg" alt="Пуссан">
+        <article class="item"><img class="item__image" src="./images/busan.jpg" alt="Пуссан">
           <div class="item__row">
-          <p class="item__text">Пуссан</p>
-          <img class="item__like" src="./images/like.svg">
+          <h2 class="item__text">Пуссан</h2>
+          <button class="item__button" type="button"><img class="item__like" src="./images/like.svg" alt="Лайк"></button>
           </div>
-        </div>
-
-        <div class="item"><img class="item__image" src="./images/paris.jpg" alt="Париж">
+        </article>
+        <article class="item"><img class="item__image" src="./images/paris.jpg" alt="Париж">
           <div class="item__row">
-          <p class="item__text">Париж</p>
-          <img class="item__like" src="./images/like.svg">
+          <h2 class="item__text">Париж</h2>
+          <button class="item__button" type="button"><img class="item__like" src="./images/like.svg" alt="Лайк"></button>
           </div>
-        </div>
-
-        <div class="item"><img class="item__image" src="./images/siena.jpg" alt="Сиена">
+        </article>
+        <article class="item"><img class="item__image" src="./images/siena.jpg" alt="Сиена">
           <div class="item__row">
-          <p class="item__text">Сиена</p>
-          <img class="item__like" src="./images/like.svg">
+          <h2 class="item__text">Сиена</h2>
+          <button class="item__button" type="button"><img class="item__like" src="./images/like.svg" alt="Лайк"></button>
           </div>
-        </div>
-
-        <div class="item"><img class="item__image" src="./images/sighișoara.jpg" alt="Сигишоара">
+        </article>
+        <article class="item"><img class="item__image" src="./images/sighișoara.jpg" alt="Сигишоара">
           <div class="item__row">
-          <p class="item__text">Сигишоара</p>
-          <img class="item__like" src="./images/like.svg">
+          <h2 class="item__text">Сигишоара</h2>
+          <button class="item__button" type="button"><img class="item__like" src="./images/like.svg" alt="Лайк"></button>
           </div>
-        </div>
-
-        <div class="item"><img class="item__image" src="./images/hamburg.jpg" alt="Гамбург">
+        </article>
+        <article class="item"><img class="item__image" src="./images/hamburg.jpg" alt="Гамбург">
           <div class="item__row">
-          <p class="item__text">Гамбург</p>
-          <img class="item__like" src="./images/like.svg">
+          <h2 class="item__text">Гамбург</h2>
+          <button class="item__button" type="button"><img class="item__like" src="./images/like.svg" alt="Лайк"></button>
           </div>
-        </div>
-
-        <div class="item"><img class="item__image" src="./images/sydney.jpg" alt="Сидней">
+        </article>
+        <article class="item"><img class="item__image" src="./images/sydney.jpg" alt="Сидней">
           <div class="item__row">
-          <p class="item__text">Сидней</p>
-          <img class="item__like" src="./images/like.svg">
+          <h2 class="item__text">Сидней</h2>
+          <button class="item__button" type="button"><img class="item__like" src="./images/like.svg" alt="Лайк"></button>
           </div>
-        </div>
-
+        </article>
       </section>
-
     </main>
-
     <footer class="footer">
-      <p class="footer__text">&#169; 2020 Mesto Russia</p>
+      <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
-
-
- <div class="popup">
-
-  <div class="popup__container">
-    <button class="popup__button-close"><img src="./images/close.svg"></button>
-    <h2 class="popup__heading">Редактировать профиль</h2>
-    <input type="text" placeholder="Жак-Ив Кусто" class="popup__input-name">
-    <input type="text" placeholder="Исследователь океана" class="popup__input-description">
-    <button class="popup__button">Сохранить</button>
+    <div class="popup">
+      <form name="form" class="popup__container">
+        <button type="button" class="popup__button-close"><img src="./images/close.svg" alt="Кнопка"></button>
+        <h2 class="popup__heading">Редактировать профиль</h2>
+        <input name="name" type="text" value="Жак-Ив Кусто" class="popup__input-name" autocomplete="off">
+        <input name="job" type="text" value="Исследователь океана" class="popup__input-description" autocomplete="off">
+        <button type="submit" class="popup__button">Сохранить</button>
+      </form>
   </div>
-
+  <script src="./scripts/main.js"></script>
 </div>
-
-
-
-
-<script src="./scripts/main.js"></script>
-
- </div>
-
 </body>
 </html>

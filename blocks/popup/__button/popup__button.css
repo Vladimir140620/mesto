@@ -1,24 +1,16 @@
 .popup__button {
-  /* background-image: url(../../../images/closeicon.svg);
-  margin-left: 36px;
-  margin-right: 36px;
-  max-width: 358px;
-  max-height: 50.15px; */
     background-color: black;
     border: none;
     color: white;
     padding: 15px 135px;
     text-align: center;
     text-decoration: none;
-    /* display: inline-block; */
     font-size: 18px;
     margin-left: 36px;
     margin-right: 36px;
     cursor: pointer;
     border-radius: 2px;
-
-
-
+    margin-bottom: 36px;
 }
 
 .popup__button:hover {
@@ -30,4 +22,4 @@
   .popup__button {
     padding: 15px 80px;
   }
-  }
+}
