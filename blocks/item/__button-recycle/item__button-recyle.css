@@ -1,0 +1,15 @@
+.item__button-recyle {
+  border: none;
+  background: url(../../../images/trash.png) center no-repeat;
+  background-size: 100%;
+  height: 19px;
+  width: 17px;
+  position: absolute;
+  top: 23px;
+  right: 16px;
+}
+
+.item__button-recyle:hover {
+  opacity: .6;
+  cursor: pointer;
+}

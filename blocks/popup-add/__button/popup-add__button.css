@@ -1,0 +1,25 @@
+.popup-add__button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 135px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 36px;
+    margin-right: 36px;
+    cursor: pointer;
+    border-radius: 2px;
+    margin-bottom: 36px;
+}
+
+.popup-add__button:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 424px) {
+  .popup-add__button {
+    padding: 15px 80px;
+  }
+}

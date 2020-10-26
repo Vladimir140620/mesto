@@ -1,9 +1,12 @@
 .item__button {
-  cursor: pointer;
-  background: transparent;
   border: none;
-  outline: none;
-  padding: 0;
+  background: url(../../../images/like.svg) center no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  height: 21px;
+  width: 21px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .item__button:hover {
