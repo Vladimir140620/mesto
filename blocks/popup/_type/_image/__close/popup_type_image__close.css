@@ -1,4 +1,4 @@
-.popup-picture__close {
+.popup_type_image__close {
   position: absolute;
   top: -54px;
   right: -54px;
@@ -7,7 +7,7 @@
   background: transparent;
 }
 
-.popup-picture__close:hover {
+.popup_type_image__close:hover {
   opacity: .6;
   cursor: pointer;
 }

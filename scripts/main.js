@@ -1,23 +1,27 @@
-let popup = document.querySelector('.popup');
-let popupOpenButton = document.querySelector('.profile__edit-button');
-let popupCloseButton = popup.querySelector('.popup__button-close');
-let popupButton = popup.querySelector('.popup__button');
-let name = document.querySelector('.profile__name');
-let paragraph = document.querySelector('.profile__description');
-let nameInput = document.querySelector('.popup__input_name');
-let jobInput = document.querySelector('.popup__input_description');
+const popup = document.querySelector('.popup');
+const popupOpenButton = document.querySelector('.profile__edit-button');
+const popupCloseButton = popup.querySelector('.popup__button-close');
+const popupButton = popup.querySelector('.popup__button');
+const name = document.querySelector('.profile__name');
+const paragraph = document.querySelector('.profile__description');
+const nameInput = document.querySelector('.popup__input_name');
+const jobInput = document.querySelector('.popup__input_description');
 
-let popupOpen = function () {
+const togglePopup = (popup) => {
   popup.classList.toggle('popup_opened');
+}
+
+const popupOpen = function () {
+  togglePopup(popup);
   nameInput.value=name.textContent;
   jobInput.value=paragraph.textContent;
 }
 
-let popupClose = function () {
-  popup.classList.toggle('popup_opened');
+const popupClose = function () {
+  togglePopup(popup);
 }
 
-let close = function (event) {
+const close = function (event) {
   if (event.target !== event.currentTarget) return
   popupClose();
 }
@@ -26,7 +30,7 @@ popupOpenButton.addEventListener('click', popupOpen);
 popupCloseButton.addEventListener('click', popupClose);
 popup.addEventListener('click', close);
 
-let formElement = document.querySelector('.popup__container');
+const formElement = document.querySelector('.popup__container');
 
 function formSubmitHandler (evt) {
     evt.preventDefault();
@@ -37,21 +41,21 @@ function formSubmitHandler (evt) {
 
 formElement.addEventListener('submit', formSubmitHandler);
 
-let popupAddOpenButton = document.querySelector('.profile__add-button');
-let popupAdd = document.querySelector('.popup-add');
-let popupAddCloseButton = popupAdd.querySelector('.popup-add__button-close');
+const popupAddOpenButton = document.querySelector('.profile__add-button');
+const popupAdd = document.querySelector('.popup_type_new-card');
+const popupAddCloseButton = popupAdd.querySelector('.popup__button-close');
 
-let popupAddOpen = function () {
-  popupAdd.classList.toggle('popup-add_opened');
+const openAddPopup = function () {
+  togglePopup(popupAdd);
 }
 
-popupAddOpenButton.addEventListener('click', popupAddOpen);
+popupAddOpenButton.addEventListener('click', openAddPopup);
 
- let popupAddClose = function () {
-   popupAdd.classList.toggle('popup-add_opened');
+ const closeAddPopup = function () {
+  togglePopup(popupAdd);
 }
 
-popupAddCloseButton.addEventListener('click', popupAddClose);
+popupAddCloseButton.addEventListener('click', closeAddPopup);
 
 const initialCards = [
   {
@@ -80,22 +84,22 @@ const initialCards = [
   }
 ];
 
-const form = document.querySelector('.popup-add__container');
+const form = document.querySelector('.popup_type_new-card__container');
 const list = document.querySelector('.elements');
 const template = document.querySelector('.template');
-const inputName = document.querySelector('.popup-add__input_name');
-const inputLink = document.querySelector('.popup-add__input_link');
+const inputName = document.querySelector('.popup_type_new-card__input_name');
+const inputLink = document.querySelector('.popup_type_new-card__input_link');
 
-const popupPicture = document.querySelector(".popup-picture");
-const imagePopupPicture = popupPicture.querySelector(".popup-picture__image");
-const headerPopupPicture = popupPicture.querySelector(".popup-picture__image-name");
-const popupPictureClose = document.querySelector(".popup-picture");
+const popupPicture = document.querySelector(".popup_type_image");
+const imagePopupPicture = popupPicture.querySelector(".popup_type_image__image");
+const headerPopupPicture = popupPicture.querySelector(".popup_type_image__image-name");
+const popupPictureClose = document.querySelector(".popup_type_image__close");
 
-const popupToggle = function () {
-  popupPicture.classList.toggle('popup-picture_opened');
+const openPopupPicture = function () {
+  togglePopup(popupPicture);
 };
 
-popupPictureClose.addEventListener('click', popupToggle);
+popupPictureClose.addEventListener('click', openPopupPicture);
 
 function renderList() {
   const items = initialCards.map((place) => getPlace(place));
@@ -117,7 +121,7 @@ function onCreateHandler(){
 function getPlace(place) {
   const cardElement = template.content.cloneNode(true);
   const name = cardElement.querySelector('.item__text');
-  const link = cardElement.querySelector('.item__image');
+  const cardImage = cardElement.querySelector('.item__image');
 
   cardElement.querySelector('.item__button').addEventListener('click', function (evt) {
     evt.target.classList.toggle('item__button_active');
@@ -125,7 +129,7 @@ function getPlace(place) {
 
   const trashButton = cardElement.querySelector('.item__button-recyle');
 
-  link.addEventListener("click", () => handleImagePreview(place));
+  cardImage.addEventListener("click", () => handleImagePreview(place));
 
   trashButton.addEventListener('click', function () {
     const item = trashButton.closest('.item');
@@ -133,23 +137,24 @@ function getPlace(place) {
   });
 
   name.textContent = place.name;
-  link.src = place.link;
+  cardImage.src = place.link;
+  cardImage.alt = `Изображение ${place.name}`;
 
   return cardElement;
 };
 
 const handleImagePreview = (details) => {
   imagePopupPicture.src = details.link;
-  imagePopupPicture.alt = `Изображение ${details.title}`;
+  imagePopupPicture.alt = `Изображение ${details.name}`;
   headerPopupPicture.textContent = details.name;
 
-  popupToggle(popupPicture);
+  openPopupPicture(popupPicture);
 };
 
 function onSubmitForm(event){
   event.preventDefault();
   onCreateHandler();
-  popupAddClose();
+  closeAddPopup();
 };
 
 function bindListeners() {
