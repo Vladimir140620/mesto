@@ -9,12 +9,19 @@ const nameInput = document.querySelector('.popup__input_name');
 const jobInput = document.querySelector('.popup__input_description');
 const openedPopup = document.querySelector('.popup_opened');
 
+const ESCclose = function (evt) {
+  if (evt.keyCode === 27) {
+    closePopup(evt.currentTarget.querySelector('.popup_opened'));
+}};
+
 const openPopup = (popup) => {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', ESCclose);
 }
 
 const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', ESCclose);
 }
 
 const openPopupProfile = function () {
