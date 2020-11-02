@@ -35,16 +35,16 @@ const closePopupProfile = function () {
   closePopup(popupProfile);
 }
 
-const closeOnOverlayClick = function (evt) {
-  if (evt.target  !== evt.currentTarget) return
-  closePopup(popupProfile);
-  console.log(evt)
-};
+const popups = document.querySelectorAll('.popup')
+popups.forEach((popup) => {
+  popup.addEventListener('click', function (evt) {
+    if (evt.target  !== evt.currentTarget) return
+    closePopup(popup);
+  })
+})
 
 popupOpenButton.addEventListener('click', openPopupProfile);
 popupCloseButton.addEventListener('click', closePopupProfile);
-popupProfile.addEventListener('click', closeOnOverlayClick);
-
 
 const profileForm = document.querySelector('.popup__container');
 
@@ -60,14 +60,6 @@ profileForm.addEventListener('submit', formSubmitHandler);
 const popupAddOpenButton = document.querySelector('.profile__add-button');
 const popupAdd = document.querySelector('.popup_type_new-card');
 const popupAddCloseButton = popupAdd.querySelector('.popup__button-close');
-
-const closeOnOverlayClickPopupCard = function (evt) {
-  if (evt.target  !== evt.currentTarget) return
-  closePopup(popupAdd);
-  console.log(evt)
-};
-
-popupAdd.addEventListener('click', closeOnOverlayClickPopupCard);
 
 const openAddPopup = function () {
   openPopup(popupAdd);
@@ -128,14 +120,6 @@ const closePopupPicture = function () {
 };
 
 popupPictureClose.addEventListener('click', closePopupPicture);
-
-const closeOnOverlayClickpopupPicture = function (evt) {
-  if (evt.target  !== evt.currentTarget) return
-  closePopup(popupPicture);
-  console.log(evt)
-};
-
-popupPicture.addEventListener('click', closeOnOverlayClickpopupPicture);
 
 function renderList() {
   const items = initialCards.map((place) => getPlace(place));
